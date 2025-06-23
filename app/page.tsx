@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ArrowRight, Beaker, Calculator, Zap } from 'lucide-react';
 import EssayCard from '@/components/EssayCard';
 
@@ -44,7 +43,7 @@ export default function HomePage() {
       featured: false
     },
     {
-      title: "Place Holder 3",
+      title: "Checking Live Edits on Local Host",
       description: "PLace Holder 3 you sayyyy? MMMMMMmmmm.",
       category: ["meteorology", "biology"] as const,
       status: "coming-soon" as const,
@@ -59,23 +58,15 @@ export default function HomePage() {
       <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="font-bold text-2xl text-gray-900"
-            >
+            <div className="font-bold text-2xl text-gray-900">
               WellOkDen.xyz
-            </motion.div>
+            </div>
             <div className="flex items-center space-x-6">
               <a href="#essays" className="text-gray-600 hover:text-gray-900 transition-colors">Essays</a>
               <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">About</a>
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
-              >
+              <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
                 Suggest a Question
-              </motion.button>
+              </button>
             </div>
           </div>
         </div>
@@ -84,11 +75,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <h1 className="text-6xl font-bold text-gray-900 mb-6">
               Absurd Questions.
               <br />
@@ -101,14 +88,9 @@ export default function HomePage() {
               A place where curiosity meets rigorous science. We tackle the questions nobody asked 
               but everyone secretly wondered about, using real physics, biology, and engineering to find surprisingly serious answers.
             </p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex flex-wrap justify-center gap-6 mb-12"
-          >
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-6 mb-12">
             <div className="flex items-center space-x-2 bg-white rounded-full px-6 py-3 shadow-md">
               <Beaker className="w-5 h-5 text-green-500" />
               <span className="text-gray-700 font-medium">Scientific Method</span>
@@ -121,47 +103,29 @@ export default function HomePage() {
               <Zap className="w-5 h-5 text-purple-500" />
               <span className="text-gray-700 font-medium">Interactive Results</span>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <button className="bg-gradient-to-r from-indigo-600 to-cyan-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-indigo-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-              Explore the Absurdity
-            </button>
-          </motion.div>
+          <button className="bg-gradient-to-r from-indigo-600 to-cyan-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-indigo-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+            Explore the Absurdity
+          </button>
         </div>
       </section>
 
       {/* Essays Section */}
       <section id="essays" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Current Investigations</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Each essay combines rigorous scientific methodology with questions that make you go "wait, what?" 
             Click to explore our interactive simulations and surprising findings.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {essays.map((essay, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <div key={index}>
               <EssayCard {...essay} />
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
@@ -169,12 +133,7 @@ export default function HomePage() {
       {/* About Section */}
       <section id="about" className="bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">The Philosophy</h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Why should serious science only tackle serious questions? Some of the most interesting discoveries 
@@ -186,7 +145,7 @@ export default function HomePage() {
               Think of it as <strong>The Mythbusters meets Nature</strong>, with interactive visualizations 
               that let you explore the results yourself. Because the best way to understand science is to play with it.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
